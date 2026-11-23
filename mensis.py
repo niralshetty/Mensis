@@ -1,11 +1,11 @@
 """
 MENSIS - period tracker 
 
-languages used : python, HTML, CSS
+languages used : Python, HTML, CSS
 
-How the file is organised (read top to bottom):
+How the file is organised :
   1. Database      - tables, and a helper to open them
-  2. Cycle maths   - ONE function (info) that the dashboard AND calendar both use
+  2. Cycle maths   - one function that the dashboard and calendar both use
   3. Pages         - login, signup, onboarding, home, calendar, settings
   4. Small APIs    - save a daily log, toggle a period day
   5. Email         - reminder sender 
@@ -871,10 +871,8 @@ def css():
 
 # ------------------------------------------------------------------ START
 # Only runs when you start this file directly.
-if __name__ == "__main__":
-    # Create the tables if missing.
-    c = connect(); c.executescript(SCHEMA); c.commit(); c.close()
-    # Start the reminder loop in the background (daemon = stops with the app).
-    threading.Thread(target=reminder_loop, daemon=True).start()
-    # Start the web server at http://127.0.0.1:5000.
+_c = connect(); _c.executescript(SCHEMA); _c.commit(); _c.close()
+threading.thread(target=reminder_loop, daemon=True).start()
+
+if name__ == "__main__":
     app.run(debug=True, use_reloader=False)
