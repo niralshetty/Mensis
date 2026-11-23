@@ -874,5 +874,5 @@ def css():
 _c = connect(); _c.executescript(SCHEMA); _c.commit(); _c.close()
 threading.Thread(target=reminder_loop, daemon=True).start()
 
-if name__ == "__main__":
+if __name__ == "__main__":
     app.run(debug=True, use_reloader=False)
