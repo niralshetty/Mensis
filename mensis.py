@@ -872,7 +872,7 @@ def css():
 # ------------------------------------------------------------------ START
 # Only runs when you start this file directly.
 _c = connect(); _c.executescript(SCHEMA); _c.commit(); _c.close()
-threading.thread(target=reminder_loop, daemon=True).start()
+threading.Thread(target=reminder_loop, daemon=True).start()
 
 if name__ == "__main__":
     app.run(debug=True, use_reloader=False)
