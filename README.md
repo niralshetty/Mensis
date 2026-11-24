@@ -1,6 +1,5 @@
 ## PROJECT NAME - MENSIS
-
-Web App link 
+ 
 https://mensis.onrender.com
 
 # Description 
